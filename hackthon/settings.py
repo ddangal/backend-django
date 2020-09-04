@@ -118,7 +118,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
@@ -168,9 +169,9 @@ AUTH_USER_MODEL = 'users.User'
 
 
 
-AWS_ACCESS_KEY_ID='AKIAQOTBHTVE3YAQ2AKX'
-AWS_SECRET_ACCESS_KEY='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'
-AWS_STORAGE_BUCKET_NAME='antraperena-dev'
+AWS_ACCESS_KEY_ID='AKIA2NSJOL6LYP4L5LE5 '
+AWS_SECRET_ACCESS_KEY='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 '
+AWS_STORAGE_BUCKET_NAME='backend-group-hackathon'
 AWS_S3_FILE_OVERWRITE=False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -181,7 +182,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'users.serializers.UserSerializer',
-    'TOKEN_SERIALIZER': 'users.serializers.TokenSerializer'
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {

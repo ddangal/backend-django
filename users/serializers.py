@@ -12,27 +12,23 @@ from .models import User
 UPLOADED_FILES_USE_URL= 'http://s3-us-east-1.amazonaws.com/backend-group-hackathon/'
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password', 'country', 'street_address', 'city')
 
 class CustomRegisterSerializer(RegisterSerializer):
     first_name = serializers.CharField(max_length=50, allow_blank=True, required=False)
     last_name = serializers.CharField(max_length=50, allow_blank=True, required=False)
-    expertise = serializers.CharField(max_length=50, allow_blank=True, required=False)
-    company_name = serializers.CharField(max_length=200, allow_blank=True, required=False)
-    designation = serializers.CharField(max_length=50, allow_blank=True, required=False)
-    address = serializers.CharField(max_length=300, allow_blank=True, required=False)
-    phone_number = serializers.CharField(max_length=50, allow_blank=False)
-    is_company = serializers.BooleanField()
-    is_mentor = serializers.BooleanField()
+    street_address = serializers.CharField(max_length=300, allow_blank=True, required=False)
+    country = serializers.CharField(max_length=300, allow_blank=True, required=False)
+    city = serializers.CharField(max_length=300, allow_blank=True, required=False)
     photo = serializers.FileField(max_length=None, allow_empty_file=True,
-        use_url=UPLOADED_FILES_USE_URL, required=False)
-    cv = serializers.FileField(max_length=None, allow_empty_file=True, 
-        use_url=UPLOADED_FILES_USE_URL, required=False)
-    logo = serializers.FileField(max_length=None, allow_empty_file=True, 
         use_url=UPLOADED_FILES_USE_URL, required=False)
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'phone_number', 'is_company', 'is_mentor','photo', 'cv', 'expertise', 'designation', 'address', 'logo',)
+        fields = ('username', 'email', 'password','photo', 'street_address', 'city','country')
 
     def get_cleaned_data(self):
         return {
