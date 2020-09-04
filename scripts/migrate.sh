@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-cd /home/ubuntu/orlando/
-source /home/ubuntu/envs/bin/activate
+cd /home/ubuntu/hackthon/
 #python manage.py makemigrations
 
 python manage.py migrate
