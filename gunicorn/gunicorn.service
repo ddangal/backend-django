@@ -4,9 +4,8 @@ daemon After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/orlando
-EnvironmentFile=/home/ubuntu/orlando.env
-ExecStart=/home/ubuntu/envs/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/orlando/orlando.sock orlando.wsgi:application -t 300
+WorkingDirectory=/home/ubuntu/hackthon
+ExecStart=/home/ubuntu/envs/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/hackthon/hackthon.sock hackthon.wsgi:application -t 300
 [Install]
 WantedBy=multi-user.target
 
