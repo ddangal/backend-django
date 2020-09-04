@@ -25,7 +25,20 @@ SECRET_KEY = '+gh8pgi=557$s43d4(%^7pg=uhhvl0b=e%rljvi487yhtlyddc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
+
+
+CORS_ORIGIN_WHITELIST = (
+    '18.234.7.15',
+    'localhost:4200',
+    '127.0.0.1:8000',
+    'localhost:3000',
+    'alertingdemo.s3-website-ap-southeast-1.amazonaws.com',
+    'azure-automation-2020.s3-website-us-east-1.amazonaws.com',
+    'hackathons.genesesolution.cf'
+)
 
 
 # Application definition
