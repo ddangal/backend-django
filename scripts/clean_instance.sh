@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
- rm -rf /home/ubuntu/orlando
+#  rm -rf /home/ubuntu/hackthon
