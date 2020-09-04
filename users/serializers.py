@@ -11,11 +11,16 @@ from .models import User
 
 UPLOADED_FILES_USE_URL= 'http://s3-us-east-1.amazonaws.com/backend-group-hackathon/'
 
+class UserPhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('photo')
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'country', 'street_address', 'city')
+        fields = ('email', 'password', 'country', 'street_address', 'city', 'photo')
 
 class CustomRegisterSerializer(RegisterSerializer):
     first_name = serializers.CharField(max_length=50, allow_blank=True, required=False)

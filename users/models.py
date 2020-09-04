@@ -20,6 +20,10 @@ class User(AbstractUser):
     photo = models.FileField(upload_to=upload_image_to,blank=True, null=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    laititude = models.CharField(max_length=50, blank=True, null=True)
+    longitude = models.CharField(max_length=50, blank=True, null=True)
+    direction = models.CharField(max_length=50, blank=True, null=True)
+    locationkey = models.CharField(max_length=50, blank=True, null=True)
 
     EMAIL_FIELD = 'email'
     USERNAME_FIELD = 'username'
