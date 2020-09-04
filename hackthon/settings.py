@@ -31,13 +31,13 @@ ALLOWED_HOSTS = [
 
 
 CORS_ORIGIN_WHITELIST = (
-    '18.234.7.15',
-    'localhost:4200',
-    '127.0.0.1:8000',
-    'localhost:3000',
-    'alertingdemo.s3-website-ap-southeast-1.amazonaws.com',
-    'azure-automation-2020.s3-website-us-east-1.amazonaws.com',
-    'hackathons.genesesolution.cf'
+    'http://18.234.7.15',
+    'http://localhost:4200',
+    'http://127.0.0.1:8000',
+    'http://localhost:3000',
+    'http://alertingdemo.s3-website-ap-southeast-1.amazonaws.com',
+    'http://azure-automation-2020.s3-website-us-east-1.amazonaws.com',
+    'http://hackathons.genesesolution.cf'
 )
 
 
@@ -107,6 +107,8 @@ DATABASES = {
 }
 
 
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -150,7 +152,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-
+SITE_ID=1
 
 
 # Internationalization

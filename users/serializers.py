@@ -14,7 +14,7 @@ UPLOADED_FILES_USE_URL= 'http://s3-us-east-1.amazonaws.com/backend-group-hackath
 class UserPhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('photo')
+        fields = ('photo',)
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -61,3 +61,6 @@ class CustomRegisterSerializer(RegisterSerializer):
         adapter.save_user(request, user, self)
         print(user)
         return user
+
+
+

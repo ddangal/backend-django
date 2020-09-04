@@ -12,6 +12,7 @@ from django.db.models import Q
 
 
 class UserViewSet(viewsets.GenericViewSet,
+                    mixins.ListModelMixin,
                     mixins.RetrieveModelMixin):
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -26,6 +27,7 @@ class UserViewSet(viewsets.GenericViewSet,
 
 
 class UserPhotoViewSet(viewsets.GenericViewSet,
+                    mixins.ListModelMixin,
                     mixins.UpdateModelMixin,
                     mixins.RetrieveModelMixin):
     serializer_class = UserPhotoSerializer
